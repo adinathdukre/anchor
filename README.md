@@ -27,7 +27,7 @@ Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi, UAE
 </div>
 
 ## 🔥 News
-- **[Nov 2026]** 🚀 Code for ANCHOR and the public NHANES analysis is released.
+- **[Nov 2026]** 🚀 Code for ANCHOR, the public NHANES analysis and the scripts run inside the HPP environment is released.
 - 📄 The accompanying paper was prepared for **RECOMB 2027**.
 
 ## Overview
@@ -113,10 +113,11 @@ python code/nhanes/nhanes_anchor.py # writes results/nhanes_anchor*.csv
 
 ## 🔒 Data and scope
 
-This repository contains the ANCHOR package and the public NHANES analysis. It contains no participant-level data and no Human Phenotype Project (HPP) results.
+This repository contains the ANCHOR package, the public NHANES analysis and the scripts run inside the Human Phenotype Project (HPP) environment. It contains no participant-level data and no HPP results.
 
 - **HPP.** HPP data are available to bona fide researchers through the project's data-access application ([humanphenotypeproject.org/data-access](https://humanphenotypeproject.org/data-access)), in a secure cloud-based environment, after signing a data-access agreement for non-commercial use.
-- **Other paper materials.** The simulation code, the scripts run inside the HPP environment and the aggregate HPP results will be added after data-provider approval.
+- **HPP scripts.** `code/hpp/` holds the scripts as they were run, including the index-free genotype reader `bgzf_extract.py`. They need approved HPP access and run only inside its environment; see [`code/hpp/README.md`](code/hpp/README.md).
+- **Other paper materials.** The simulation code and the aggregate HPP results will be added after data-provider approval.
 - **NHANES.** The analysis in `code/nhanes` uses openly available data.
 
 ## 🗂️ Repository Structure
@@ -126,6 +127,7 @@ anchor/
 ├── code/
 │   ├── anchor/           # ANCHOR library: attribution matrix, calibration with reliability floor,
 │   │                     # habitual/acute decomposition, dated nights, participant bootstrap, leak_check
+│   ├── hpp/              # scripts run inside the HPP environment (aggregate output only)
 │   └── nhanes/           # NHANES 2017–2018 anchor-basis replication
 ├── examples/             # quickstart.py on simulated data
 ├── results/              # NHANES outputs
