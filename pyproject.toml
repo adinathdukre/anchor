@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "anchor-attribution"
+version = "0.1.0"
+description = "ANCHOR: detect and correct spurious time-anchor attribution when habits are averaged over a few nights"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22"]
+license = {text = "MIT"}
+
+[tool.setuptools]
+package-dir = {"" = "code"}
+packages = ["anchor"]

@@ -1,0 +1,23 @@
+analysis,marker,n,anchor,beta_F,z
+session categorical,HDL cholesterol,5122,F alone,0.0085,2.91
+session categorical,HDL cholesterol,5122,F | T fixed,0.0062,1.59
+session categorical,total cholesterol,5122,F alone,-0.0007,-0.25
+session categorical,total cholesterol,5122,F | T fixed,0.0083,2.28
+clock coding 9/13/16 (compressed),HDL cholesterol,5122,F alone,0.0085,2.91
+clock coding 9/13/16 (compressed),HDL cholesterol,5122,F | T fixed,0.0059,1.52
+clock coding 9/13/16 (compressed),HDL cholesterol,5122,F | L fixed,-0.002,-0.21
+clock coding 9/13/16 (compressed),total cholesterol,5122,F alone,-0.0007,-0.25
+clock coding 9/13/16 (compressed),total cholesterol,5122,F | T fixed,0.0078,2.16
+clock coding 9/13/16 (compressed),total cholesterol,5122,F | L fixed,0.0329,3.66
+clock coding 8/14/20 (stretched),HDL cholesterol,5122,F alone,0.0085,2.91
+clock coding 8/14/20 (stretched),HDL cholesterol,5122,F | T fixed,0.0058,1.51
+clock coding 8/14/20 (stretched),HDL cholesterol,5122,F | L fixed,0.0008,0.11
+clock coding 8/14/20 (stretched),total cholesterol,5122,F alone,-0.0007,-0.25
+clock coding 8/14/20 (stretched),total cholesterol,5122,F | T fixed,0.0073,2.04
+clock coding 8/14/20 (stretched),total cholesterol,5122,F | L fixed,0.0219,3.31
+afternoon and evening sessions only,HDL cholesterol,2646,F alone,0.0115,2.47
+afternoon and evening sessions only,HDL cholesterol,2646,F | T fixed,0.0105,2.16
+afternoon and evening sessions only,HDL cholesterol,2646,F | L fixed,0.0005,0.04
+afternoon and evening sessions only,total cholesterol,2646,F alone,0.0049,1.15
+afternoon and evening sessions only,total cholesterol,2646,F | T fixed,0.0057,1.29
+afternoon and evening sessions only,total cholesterol,2646,F | L fixed,0.0135,1.17

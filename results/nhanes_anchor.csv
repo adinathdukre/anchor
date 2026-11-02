@@ -1,0 +1,7 @@
+marker,n,anchor,beta_F_SD_per_h,se,z
+HDL cholesterol,5122,F alone,0.0085,0.0029,2.91
+HDL cholesterol,5122,F | T fixed,0.0058,0.0038,1.51
+HDL cholesterol,5122,F | L fixed,-0.0003,0.008,-0.04
+total cholesterol,5122,F alone,-0.0007,0.0029,-0.25
+total cholesterol,5122,F | T fixed,0.0075,0.0036,2.09
+total cholesterol,5122,F | L fixed,0.026,0.0075,3.47
