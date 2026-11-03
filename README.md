@@ -49,7 +49,6 @@ Wearable biobanks summarise a few nights of behaviour as exposures measured from
 - [🔁 Reproducing the paper](#-reproducing-the-paper)
 - [🔒 Data access](#-data-access)
 - [🗂️ Repository Structure](#️-repository-structure)
-- [⚠️ Limitations](#️-limitations)
 - [📝 Citation](#-citation)
 - [📚 Acknowledgments](#-acknowledgments)
 - [📨 Contact](#-contact)
@@ -202,14 +201,6 @@ anchor/
 ├── results/              # simulation outputs, transcribed aggregate HPP estimates, NHANES outputs
 └── pyproject.toml        # package `anchor-attribution`
 ```
-
-## ⚠️ Limitations
-
-- Calibration assumes additive nightly error independent of habits; in HPP the number of logged nights depended weakly on habits.
-- Dietary covariates were not calibrated.
-- Habits span about two weeks of logging, whereas some outcomes (e.g. liver fat) reflect months.
-- Habitual effects are causal only under exchangeability of habits given covariates; acute effects assume no time-varying confounding.
-- All HPP analyses are exploratory and cross-sectional, and external replication is needed.
 
 ## 📝 Citation
 
