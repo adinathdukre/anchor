@@ -1,0 +1,162 @@
+Real-data run 1 (HPP TRE, Mealtiming workspace, 2026-10-25) — aggregate output transcribed from screen
+
+nights 4889, people 2011, k: {2: 1144, 3: 867}
+recomputed person means vs saved M50/D50: r = 1.0, 1.0 (exact reconstruction)
+
+Sigma_U (night-level error cov, h^2): [[1.9585, -1.6261], [-1.6261, 1.9356]]  within-night corr -0.835
+Sigma_X (true habit cov, h^2):       [[0.9626, -0.4944], [-0.4944, 0.7072]]  true-habit corr -0.599
+observed person-mean corr -0.716; single-night ICC clock 0.330, gap 0.268 (report: 0.33, 0.26)
+Lambda (naive = Lambda @ true): [[0.66, 0.061], [0.19, 0.508]]
+
+Liver attenuation (dB/cm/MHz per h), adjusted age, age2, sex, energy, fat, protein, alcohol freq; n = 2011
+naive (saved means, = report)  clock +0.00504 (-0.00021, +0.01029)  gap +0.00053 (-0.00511, +0.00617)   [HC3]
+ANCHOR (r_min 0.1, B=300)      clock +0.00796 (+0.00155, +0.01572)  gap -0.00173 (-0.01153, +0.00734)   [person bootstrap percentile]
+ANCHOR fixed-sleep contrast (meal +1h, sleep fixed): +0.00969 (-0.00044, +0.02103)
+ANCHOR bootstrap p: clock coef = 0 -> 0.02 ; gap coef = 0 -> 0.693
+
+Real-data run 2 (CGM, sleep-aligned 3h mean glucose, mg/dL per h)
+CGM nights 2873, people 1250, k {2: 877, 3: 373}; within corr -0.868; ICC clock 0.373 gap 0.297; Lambda [[0.717, 0.064], [0.221, 0.536]]
+between naive (person means)  clock -0.854 (-1.683,-0.024)  gap -2.580 (-3.514,-1.645)   [= report]
+between ANCHOR (B=300)        clock -0.754 (-1.961,+0.383)  gap -4.608 (-6.737,-3.089)
+within-person FE (nights)     clock -1.056 (-1.953,-0.159)  gap -2.436 (-3.325,-1.546)   [= report followup]
+Molecular availability: nightingale_metabolomics 1644 x 253, overlap 410; serum_lipidomics 6321 x 190, overlap 1140
+
+Real-data run 3 (serum lipidomics, baseline 00_00_visit, n = 1140 people; 56 of 190 lipids with >=90% non-missing; log, z-scored; B=300 shared person bootstrap)
+naive  clock FDR<0.05 hits 0 ; top: FA 25:0 (+0.087, q 0.11), FA 23:0 (+0.080, q 0.19), Cer d18:1/18:0 (+0.080, q 0.19), FA 26:0 (+0.077, q 0.19)
+naive  gap   FDR<0.05 hits 0 ; top: SM d18:1/18:1 (+0.082, q 0.53), FA 26:0, Cer d18:1/24:1, FA 25:0, PS 44:7
+ANCHOR clock FDR<0.05 hits 0 ; top: FA 25:0 (+0.115, q 0.20), FA 23:0 (+0.109, q 0.27), Cer d18:1/18:0 (+0.106, q 0.27), FA 26:0 (+0.096, q 0.34)
+ANCHOR gap   FDR<0.05 hits 0 ; top: SM d18:1/18:1 (+0.126, q 0.76) ...
+dominant-anchor cross-tab: all 56 lipids 'none' under both
+median |ANCHOR|/|naive|: clock 1.33, gap 1.51
+
+Real-data run 4
+A. CGM acute (within) vs habitual (between), joint person bootstrap B=200, mg/dL per h
+within clock -1.056 (-1.658,-0.357) | within gap -2.436 (-3.064,-1.739)
+naive-between clock -0.854 (-1.565,-0.050) | naive-between gap -2.580 (-3.307,-1.495)
+ANCHOR-between clock -0.754 (-1.800,+0.388) | ANCHOR-between gap -4.608 (-6.183,-2.984)
+habitual-minus-acute: naive clock +0.202 (-0.676,1.283) p=0.697; naive gap -0.144 (-1.212,1.096) p=0.813
+                      ANCHOR clock +0.302 (-0.925,1.703) p=0.641; ANCHOR gap -2.173 (-3.967,-0.416) p=0.023
+B. Liver robustness (naive HC3 | ANCHOR bootstrap B=200)
+core          n=2011 naive clock +0.0050 (-0.0002,+0.0103) gap +0.0005 | ANCHOR clock +0.0080 (+0.0009,+0.0161) gap -0.0017 (-0.0113,..)
++BMI          n=2006 naive clock +0.0039 (-0.0012,+0.0090) gap -0.0003 | ANCHOR clock +0.0064 (+0.0002,+0.0149) gap -0.0027 (-0.0135,..)
++VAT          n=1718 naive clock +0.0013 (-0.0041,+0.0066) gap -0.0012 | ANCHOR clock +0.0021 (-0.0062,+0.0103) gap -0.0026 (-0.0124,..)
++sleep hours  n=2011 naive clock +0.0034 (-0.0021,+0.0089) gap -0.0011 | ANCHOR clock +0.0058 (-0.0012,+0.0153) gap -0.0041 (-0.0137,..)
+>=3 nights    n=867  naive clock +0.0051 (-0.0029,+0.0130) gap +0.0024 | ANCHOR clock +0.0071 (-0.0050,+0.0175) gap +0.0020 (-0.0128,..)
+D. followup_20261001 contains: CONFIRMATION_PLAN.txt, PROTOCOL.txt, WINDOW_METHODS.txt, matched_window_nights.parquet, verification.json, window_audit.json, window_comparison.py, window_estimates.csv, window_run.log, within_person.py, within_person_estimates.csv
+
+Real-data run 5 (molecular, log + z, median-imputed features with >=50% observed; B=200 shared bootstrap; BH-FDR)
+serum_lipidomics n=1140, 170 features: naive & ANCHOR 0 hits at FDR<.05 and <.10 (min q 0.15). Top clock: FA 25:0, DAG 34:2, LysoPC 20:1, PG 34:0; ANCHOR effects larger.
+nightingale_metabolomics n=351, 249 features: 0 hits (min q 0.13-0.22). Top: ApoB/ApoA1, S-VLDL CE/C/FC, M-LDL-P (clock +0.14..+0.19 SD/h naive; ANCHOR +0.18..+0.20).
+matched_window_nights.parquet: 3179 nights x 34 cols incl. glucose_3h (sleep-aligned) and meal_glucose_3h (meal-aligned), meal_samples, meal_span
+
+Real-data run 6: anchor-alignment test on matched windows (2732 nights, 1193 people; joint bootstrap B=200; mg/dL per h)
+                         sleep-aligned (glucose_3h)   meal-aligned (meal_glucose_3h)   difference (sleep - meal)
+within         clock     -1.05 (-1.74,-0.44)          -0.66 (-1.38,+0.16)              -0.39 (-1.10,+0.30)
+within         gap       -2.44 (-3.14,-1.73)          +0.14 (-0.53,+0.87)              -2.58 (-3.22,-1.80)
+naive-between  clock     -0.69 (-1.47,+0.08)          -0.35 (-1.13,+0.41)              -0.34 (-0.78,+0.12)
+naive-between  gap       -2.32 (-3.19,-1.23)          +0.65 (-0.26,+1.78)              -2.97 (-3.62,-2.47)
+ANCHOR-between clock     -0.55 (-1.62,+0.58)          -0.72 (-1.84,+0.26)              +0.17 (-0.58,+0.87)
+ANCHOR-between gap       -4.36 (-6.62,-2.38)          +1.61 (-0.12,+3.66)              -5.96 (-7.63,-5.10)
+later-meal-same-sleep  within +1.39 (+0.99,+1.72) | -0.81 (-1.35,-0.37) | diff +2.20
+                       naive  +1.63 (+0.83,+2.41) | -1.01 (-1.81,-0.24) | diff +2.64
+                       ANCHOR +3.80 (+1.96,+5.81) | -2.33 (-4.27,-0.53) | diff +6.13
+
+!!! CORRECTION: for CGM (nightly outcome), the one-shot ANCHOR rows in runs 2, 4A and 6 ("ANCHOR-between") are INVALID
+    (they assume no acute effect; naive person-mean slope s = Lambda b_h + (I-Lambda) b_a). Superseded by run 7.
+
+Real-data run 7: nightly-outcome ANCHOR (habitual b_h = Lambda^-1 (s - (I-Lambda) b_a)), joint person bootstrap B=300, mg/dL per h
+CGM sleep window (cgm_qualified_nights; 2873 nights, 1250 people)
+  naive-between   clock -0.85 (-1.67,-0.03) p=0.047 | gap -2.58 (-3.59,-1.73)
+  within(acute)   clock -1.06 (-1.69,-0.33)         | gap -2.44 (-3.14,-1.77)
+  habitual        clock -0.72 (-1.79,+0.49) p=0.187 | gap -2.87 (-4.63,-1.42)
+  habitual-acute  clock +0.33 (-1.07,+1.61) p=0.687 | gap -0.43 (-2.36,+1.22) p=0.593
+Matched windows (2732 nights, 1193 people; Lambda [[0.703,0.075],[0.252,0.5]])
+  sleep-aligned   naive clock -0.69 (-1.54,+0.05) gap -2.32 | acute clock -1.05 gap -2.44 | habitual clock -0.54 (-1.67,+0.51) gap -2.46 (-4.40,-0.79) | h-a gap -0.02
+  meal-aligned    naive clock -0.35 gap +0.65 (-0.45,+1.72) | acute clock -0.66 gap +0.14 | habitual clock -0.31 gap +0.99 (-0.95,+2.80) | h-a gap +0.84
+  sleep-minus-meal naive gap -2.97 (-3.61,-2.40) | acute gap -2.58 (-3.32,-1.89) | habitual gap -3.44 (-4.77,-2.36) | h-a gap -0.86 (-2.49,+0.59) p=0.26
+
+Real-data run 8 (molecular anchors at the blood draw; serum lipidomics baseline)
+Draw anchors built for 5610 people with diet logs; 45.6% had a logged >=50 kcal occasion before the draw within 24 h.
+Fasting F (h) quantiles 5/25/50/75/95%: 0.31/0.92/1.51/2.33/4.58 (mostly non-fasting draws); draw T quantiles 8.45/9.87/13.33; corr(T,F) 0.226-0.241.
+'Last night' evening meal available for only 95 people -> acute-vs-habitual molecular decomposition NOT feasible.
+Habitual evening meal: median 14 logged days per person; single-day reliability ~0.30.
+Lipids ~ anchors + age + age2 + sex, HC3, BH-FDR, n = 2458, 170 lipids (log, z, median-imputed)
+  joint T+F : T 57/170, F 25/170   (T-only 38, F-only 6, both 19)
+  joint L+F : L 57/170, F 27/170   (L = T - F; F coefficient changes meaning with basis)
+  T alone 55/170 ; F alone 16/170
+  top T: TAG 56:2 (+0.111 SD/h), TAG 56:1 (+0.107), LPE 18:1 (+0.126), LPC 22:6 (+0.11)
+  top F: FA 18:1 (+0.116), PE 36:2 (-0.077), FA 20:1 (+0.105), FA 18:2 (+0.111)
+
+FINAL NUMBERS (B = 1000 person bootstrap)
+Liver: naive clock +0.00504 (-0.00021,+0.01029) gap +0.00053 | ANCHOR clock +0.00796 (+0.00061,+0.01537) p=0.032, gap -0.00173 (-0.01224,+0.00759) p=0.698; fixed-sleep contrast +0.00969 (-0.00003,+0.02092)
+CGM sleep window (n=1250; Lambda [[0.705,0.072],[0.235,0.517]]): naive clock -0.85 (-1.75,-0.07) p=0.030, gap -2.58 (-3.57,-1.71); acute clock -1.06 (-1.70,-0.35), gap -2.44 (-3.14,-1.77);
+   habitual clock -0.72 (-1.96,+0.36) p=0.172, gap -2.87 (-4.63,-1.39); habitual-acute clock +0.33 (-1.12,+1.62), gap -0.43 (-2.44,+1.27) p=0.626
+Matched windows (n=1193): sleep habitual gap -2.46 (-4.30,-0.76) p=0.008; meal habitual gap +0.99 (-0.98,+2.92) p=0.358; sleep-minus-meal habitual gap -3.44 (-4.58,-2.41), acute -2.58 (-3.31,-1.93), h-a -0.86 (-2.28,+0.54) p=0.208
+
+Real-data run 9 (molecular, strengthened; serum lipidomics 170 species)
+A. Habitual evening meal clock H (last >=50 kcal occasion per evening, 16:00-04:00), n=5608, median k=14 logged evenings,
+   night var 2.411, habit var 0.882, single-night ICC 0.268, person-mean reliability median 0.837
+   naive H: FDR<.05 61/170 (FDR<.10 70); ANCHOR H: 56/170 (69). top: Cer d18:1/20:0 +0.084 SD/h (q 2.3e-5), LPE 18:2 -0.071, FA 26:0 +0.079, FA 18:2 -0.068 (ANCHOR)
+B. Joint H_cal + T + F (n=2458): hits H 14, T 58, F 25
+C. Draw-anchor robustness: core T57 F25 | +BMI (n=2452) T58 F24 | +weekday+month T53 F27 | +BMI+calendar T53 F26 | log(F) T53 F27 | F>=2h subset (n=857) T22 F0
+D. Enrichment (Fisher, T hits): PE 5/5 (+0.060) p=0.0038; DAG 5/5 (+0.045) p=0.0038; LPE 5/5 (+0.085) p=0.0038; PC 1/25 depleted p=0.00037; TAG 24/73 p=1
+   (F hits): PE 5/5 (-0.057) p=4.8e-5; LPE 4/5 (-0.042) p=0.0017; TAG 5/73 depleted p=0.015; FA 3/8 (+0.041) OR 3.8 p=0.095; ACCA 2/3 p=0.057
+
+Real-data run 10 (genetic chronotype instrument; 213 Jones-2019 morningness loci from GWAS Catalog GCST007565, mapped to GRCh37;
+ extracted from per-person Gencove low-pass VCFs with custom BGZF reader; 6,850 people, 211 variants, match rate 0.991)
+A. First stage, habitual evening meal clock (n=5250; adj age, age2, sex, 10 PCs): -1.91 min per SD morning-GRS (SE 0.85), F=5.0, partial R2=0.0010  -> WEAK instrument
+B. Which anchor does genetics move (liver-nights cohort with PCs, n=1096): meal clock M -5.51 min/SD (SE 2.44) p=0.024; gap D +2.05 (SE 2.23) p=0.36; sleep onset S -3.46 (SE 1.87) p=0.064
+C. MR on 170 lipids (n=5250, F=5): 0 FDR hits for reduced form and IV; IV estimates noisy (sign agreement with ANCHOR 0.49; heterogeneity ANCHOR 45.4 vs naive 45.0, df 57) -> uninformative
+D. Liver (n=1096): GRS->attenuation +0.00207 (SE 0.00370) p=0.58; Wald ratio -0.0226/h (F 5.1) -> uninformative
+
+Real-data run 11 (follow-up visit 02_00_visit; followup_02 tables)
+Error structure  baseline : 2011 people, 4889 nights, ICC [0.330 0.268], within-corr -0.835, habit-corr -0.599, Lambda [[0.660,0.061],[0.190,0.508]]
+                 follow-up:  481 people, 1161 nights, ICC [0.323 0.246], within-corr -0.846, habit-corr -0.509, Lambda [[0.673,0.088],[0.237,0.497]]
+Sigma_U baseline [[1.959,-1.626],[-1.626,1.936]]  follow-up [[2.14,-1.81],[-1.81,2.139]]   -> error structure transports across visits
+Liver follow-up n=481 (mean 0.398, SD 0.105): naive clock +0.00294 (-0.00596,+0.01185) gap +0.00120 (-0.00800,+0.01041)
+                 ANCHOR (B=1000) clock +0.00379 (-0.00778,+0.01856) gap +0.00173 (-0.01544,+0.02175) p_clock=0.566; with baseline Sigma_U: clock +0.00375 gap +0.00174
+Change-on-change: only 79 people with both visits; reliability of change 0.14 (M), 0.27 (D); naive d-clock +0.011 (-0.028,0.049); calibrated estimate unstable -> NOT informative
+
+Real-data run 12 (plasmode spike-in on real liver-cohort nights; clock-only beta_M=0.008/h, outcome SD 0.113;
+ participants resampled to n; true habit drawn from its conditional law given the observed person mean)
+people 2011 nights 4889 Lambda [[0.66, 0.061], [0.19, 0.508]]; nightly deviation excess kurtosis (M, D): [4.16, 1.9]
+n,method,reps,false_gap_rate,clock_detect_rate,mean_gap_coef_x1e3
+2011,naive,1000,0.078,0.488,+1.562
+2011,ANCHOR,300,0.073,0.533,-0.506
+8044,naive,1000,0.183,0.977,+1.560
+8044,ANCHOR,300,0.073,0.977,-0.210
+32176,naive,1000,0.556,1.000,+1.537
+32176,ANCHOR,100,0.050,1.000,-0.159
+128704,naive,400,0.993,1.000,+1.524
+
+Real-data run 13 (A2 checks, liver cohort; night date = onset - 12 h)
+base: people 2011 nights 4889 SigmaU [[1.959,-1.626],[-1.626,1.936]] Lambda [[0.66,0.061],[0.19,0.508]]
+A. semivariogram by day lag [pairs, M, D, cov]: 1: 1139 1.776 1.792 -1.537 | 2-3: 1223 1.873 1.897 -1.628 | 4-7: 1073 2.028 2.010 -1.658 | 8-14: 310 2.433 1.974 -1.421
+B1. SigmaU from lag>=4 pairs [[2.119,-1.605],[-1.605,2.002]] Lambda [[0.573,0.026],[0.117,0.462]] (1383 pairs)
+B2. share Thu/Fri evenings 0.254; within-person weekend shift (h) M +0.041, D +0.12; weekend-adjusted Lambda [[0.662,0.06],[0.192,0.506]]
+C. person means by k: M k=2 20.794, k=3 20.751 (t=-0.72); D k=2 3.147, k=3 3.084 (t=-1.16)
+E. linear probability of k=3 per SD (HC0 SE): age +0.016 (0.011), sex +0.004 (0.011), M_mean -0.034 (0.016), D_mean -0.037 (0.016), bmi +0.010 (0.011); n 2006
+
+Real-data run 15 (dated-night ANCHOR, liver cohort)
+adjacent-night day gaps median 2 (IQR 1-4); phi per day 0.070 (bootstrap 95% CI 0.00-0.20); rho(1)=0.07, rho(2)=0.005
+SigmaU sill [[1.98,-1.628],[-1.628,1.948]]; mean k 2.43, mean k_eff 2.35
+Lambda iid [[0.66,0.061],[0.19,0.508]]; Lambda dated [[0.639,0.059],[0.188,0.486]]
+liver ANCHOR iid clock +0.00796 gap -0.00173; dated clock +0.00827 (0.00018, 0.01621) p=0.044, gap -0.00203 (-0.01322, 0.00826); 1,000 draws
+
+Real-data run 14 (lipidomics cohort, evening meal clock, >=10 evenings: 5128 people, median 14 evenings)
+A. semivariogram (h^2) by day lag [pairs, gamma]: 1: 81989 2.202 | 2: 74765 2.220 | 3: 68016 2.265 | 4-7: 206391 2.249 | 8-14: 119767 2.301 | 15-28: 230 2.208 | >28: 428439 2.476; pooled within 2.398
+B. real-order spike-in (beta=0.1, truth = mean of other evenings, 500 reps): consecutive naive 0.474 (0.005), ANCHOR 0.853 (0.008); random-position naive 0.513 (0.005), ANCHOR 1.004 (0.009)
+
+Real-data run 16 (conditioning on night count; separate decay by anchor)
+A. liver (2011 people, share k=3 0.431):
+   ANCHOR (no k term): clock +0.00796, gap -0.00173
+   ANCHOR + 1{k=3}: clock +0.00772 (0.00066, 0.01493) p=0.032; gap -0.00202 (-0.01093, 0.00690) p=0.688 (500 draws)
+   dated ANCHOR + 1{k=3}: clock +0.00803 (0.00081, 0.01591) p=0.032; gap -0.00233 (-0.01262, 0.00713) p=0.632; phi 0.070
+C. decay fitted separately: M phi 0.120 (sill 2.014); D phi 0.080 (sill 1.954); shared phi 0.070
+B. early-sleep glucose (habitual, 300 draws):
+   no k term: clock -0.72 (-1.87, 0.40) p=0.227; gap -2.87 (-4.35, -1.30); acute gap -2.44
+   + k indicators (k=3, k>=4): clock -0.73 (-1.85, 0.36) p=0.180; gap -2.87 (-4.56, -1.37); acute gap -2.44
+
+Real-data run 17 (negative-control outcome: adult height, liver cohort, n=2007; standardised)
+naive (SD per hour): clock +0.0027 (-0.0288, +0.0342); gap +0.0118 (-0.0228, +0.0465)
+ANCHOR (500 draws): clock +0.0015 (-0.0456, +0.0458) p=0.940; gap +0.0244 (-0.0357, +0.0808) p=0.468

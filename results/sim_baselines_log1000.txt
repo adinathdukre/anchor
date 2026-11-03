@@ -1,0 +1,72 @@
+code/sim/sim_baselines.py:26: RuntimeWarning: divide by zero encountered in matmul
+  k = rng.choice([2, 3], n, p=PK); X = rng.multivariate_normal([20.8, 3.0], SX, n)
+code/sim/sim_baselines.py:26: RuntimeWarning: overflow encountered in matmul
+  k = rng.choice([2, 3], n, p=PK); X = rng.multivariate_normal([20.8, 3.0], SX, n)
+code/sim/sim_baselines.py:26: RuntimeWarning: invalid value encountered in matmul
+  k = rng.choice([2, 3], n, p=PK); X = rng.multivariate_normal([20.8, 3.0], SX, n)
+code/sim/sim_baselines.py:27: RuntimeWarning: divide by zero encountered in matmul
+  pid = np.repeat(np.arange(n), k); Wn = X[pid] + rng.multivariate_normal([0, 0], SU, k.sum())
+code/sim/sim_baselines.py:27: RuntimeWarning: overflow encountered in matmul
+  pid = np.repeat(np.arange(n), k); Wn = X[pid] + rng.multivariate_normal([0, 0], SU, k.sum())
+code/sim/sim_baselines.py:27: RuntimeWarning: invalid value encountered in matmul
+  pid = np.repeat(np.arange(n), k); Wn = X[pid] + rng.multivariate_normal([0, 0], SU, k.sum())
+code/sim/sim_baselines.py:28: RuntimeWarning: divide by zero encountered in matmul
+  c = rng.standard_normal(n)[:, None]; sig = X @ beta + 0.02 * c[:, 0]
+code/sim/sim_baselines.py:28: RuntimeWarning: overflow encountered in matmul
+  c = rng.standard_normal(n)[:, None]; sig = X @ beta + 0.02 * c[:, 0]
+code/sim/sim_baselines.py:28: RuntimeWarning: invalid value encountered in matmul
+  c = rng.standard_normal(n)[:, None]; sig = X @ beta + 0.02 * c[:, 0]
+code/sim/../anchor/anchor.py:56: RuntimeWarning: divide by zero encountered in matmul
+  r = y - A @ coef
+code/sim/../anchor/anchor.py:56: RuntimeWarning: overflow encountered in matmul
+  r = y - A @ coef
+code/sim/../anchor/anchor.py:56: RuntimeWarning: invalid value encountered in matmul
+  r = y - A @ coef
+code/sim/../anchor/anchor.py:60: RuntimeWarning: divide by zero encountered in matmul
+  return AtA_inv @ (A.T * w) @ A @ AtA_inv
+code/sim/../anchor/anchor.py:60: RuntimeWarning: overflow encountered in matmul
+  return AtA_inv @ (A.T * w) @ A @ AtA_inv
+code/sim/../anchor/anchor.py:60: RuntimeWarning: invalid value encountered in matmul
+  return AtA_inv @ (A.T * w) @ A @ AtA_inv
+code/sim/sim_baselines.py:35: RuntimeWarning: divide by zero encountered in matmul
+  Xd = np.column_stack([np.ones(len(Yn)), Wn, Cn]); b = np.linalg.lstsq(Xd, Yn, rcond=None)[0]; r = Yn - Xd @ b
+code/sim/sim_baselines.py:35: RuntimeWarning: overflow encountered in matmul
+  Xd = np.column_stack([np.ones(len(Yn)), Wn, Cn]); b = np.linalg.lstsq(Xd, Yn, rcond=None)[0]; r = Yn - Xd @ b
+code/sim/sim_baselines.py:35: RuntimeWarning: invalid value encountered in matmul
+  Xd = np.column_stack([np.ones(len(Yn)), Wn, Cn]); b = np.linalg.lstsq(Xd, Yn, rcond=None)[0]; r = Yn - Xd @ b
+code/sim/../anchor/anchor.py:122: RuntimeWarning: divide by zero encountered in matmul
+  out[m] = mu_w + Zc[m] @ G.T
+code/sim/../anchor/anchor.py:122: RuntimeWarning: overflow encountered in matmul
+  out[m] = mu_w + Zc[m] @ G.T
+code/sim/../anchor/anchor.py:122: RuntimeWarning: invalid value encountered in matmul
+  out[m] = mu_w + Zc[m] @ G.T
+{'truth': 'clock_only', 'n': 2011, 'method': 'oracle', 'bias_M': 0.0002, 'bias_D': 0.0001, 'rmse_M': 0.0032, 'rmse_D': 0.0038, 'cover_M': 0.943, 'cover_D': 0.947, 'false_cross': 0.053, 'correct': 0.71}
+{'truth': 'clock_only', 'n': 2011, 'method': 'naive', 'bias_M': -0.0026, 'bias_D': 0.0016, 'rmse_M': 0.0037, 'rmse_D': 0.0033, 'cover_M': 0.832, 'cover_D': 0.92, 'false_cross': 0.08, 'correct': 0.477}
+{'truth': 'clock_only', 'n': 2011, 'method': 'pooled', 'bias_M': -0.0042, 'bias_D': 0.0016, 'rmse_M': 0.0046, 'rmse_D': 0.0025, 'cover_M': 0.419, 'cover_D': 0.883, 'false_cross': 0.117, 'correct': 0.413}
+{'truth': 'clock_only', 'n': 2011, 'method': 'univ-RC', 'bias_M': 0.0021, 'bias_D': 0.0035, 'rmse_M': 0.0055, 'rmse_D': 0.0072, 'cover_M': 0.909, 'cover_D': 0.904, 'false_cross': 0.096, 'correct': 0.488}
+{'truth': 'clock_only', 'n': 2011, 'method': 'ANCHOR', 'bias_M': 0.0002, 'bias_D': 0.0001, 'rmse_M': 0.0039, 'rmse_D': 0.0049, 'cover_M': 0.934, 'cover_D': 0.935, 'false_cross': 0.065, 'correct': 0.567}
+{'truth': 'clock_only', 'n': 8044, 'method': 'oracle', 'bias_M': -0.0, 'bias_D': -0.0, 'rmse_M': 0.0015, 'rmse_D': 0.0018, 'cover_M': 0.958, 'cover_D': 0.955, 'false_cross': 0.045, 'correct': 0.954}
+{'truth': 'clock_only', 'n': 8044, 'method': 'naive', 'bias_M': -0.0027, 'bias_D': 0.0015, 'rmse_M': 0.003, 'rmse_D': 0.0021, 'cover_M': 0.472, 'cover_D': 0.816, 'false_cross': 0.184, 'correct': 0.801}
+{'truth': 'clock_only', 'n': 8044, 'method': 'pooled', 'bias_M': -0.0043, 'bias_D': 0.0015, 'rmse_M': 0.0044, 'rmse_D': 0.0018, 'cover_M': 0.006, 'cover_D': 0.684, 'false_cross': 0.316, 'correct': 0.66}
+{'truth': 'clock_only', 'n': 8044, 'method': 'univ-RC', 'bias_M': 0.0018, 'bias_D': 0.0032, 'rmse_M': 0.003, 'rmse_D': 0.0044, 'cover_M': 0.871, 'cover_D': 0.815, 'false_cross': 0.185, 'correct': 0.803}
+{'truth': 'clock_only', 'n': 8044, 'method': 'ANCHOR', 'bias_M': 0.0, 'bias_D': -0.0, 'rmse_M': 0.0019, 'rmse_D': 0.0023, 'cover_M': 0.946, 'cover_D': 0.942, 'false_cross': 0.058, 'correct': 0.935}
+{'truth': 'gap_only', 'n': 2011, 'method': 'oracle', 'bias_M': 0.0001, 'bias_D': 0.0, 'rmse_M': 0.0031, 'rmse_D': 0.0036, 'cover_M': 0.959, 'cover_D': 0.957, 'false_cross': 0.041, 'correct': 0.556}
+{'truth': 'gap_only', 'n': 2011, 'method': 'naive', 'bias_M': -0.0005, 'bias_D': 0.0039, 'rmse_M': 0.0026, 'rmse_D': 0.0048, 'cover_M': 0.956, 'cover_D': 0.734, 'false_cross': 0.044, 'correct': 0.261}
+{'truth': 'gap_only', 'n': 2011, 'method': 'pooled', 'bias_M': -0.0005, 'bias_D': 0.0055, 'rmse_M': 0.0019, 'rmse_D': 0.0058, 'cover_M': 0.954, 'cover_D': 0.198, 'false_cross': 0.046, 'correct': 0.203}
+{'truth': 'gap_only', 'n': 2011, 'method': 'univ-RC', 'bias_M': -0.0009, 'bias_D': -0.0008, 'rmse_M': 0.0049, 'rmse_D': 0.0062, 'cover_M': 0.951, 'cover_D': 0.938, 'false_cross': 0.049, 'correct': 0.279}
+{'truth': 'gap_only', 'n': 2011, 'method': 'ANCHOR', 'bias_M': 0.0, 'bias_D': -0.0001, 'rmse_M': 0.0037, 'rmse_D': 0.0048, 'cover_M': 0.955, 'cover_D': 0.941, 'false_cross': 0.045, 'correct': 0.371}
+{'truth': 'gap_only', 'n': 8044, 'method': 'oracle', 'bias_M': -0.0, 'bias_D': -0.0, 'rmse_M': 0.0016, 'rmse_D': 0.0019, 'cover_M': 0.95, 'cover_D': 0.942, 'false_cross': 0.05, 'correct': 0.94}
+{'truth': 'gap_only', 'n': 8044, 'method': 'naive', 'bias_M': -0.0005, 'bias_D': 0.0039, 'rmse_M': 0.0014, 'rmse_D': 0.0042, 'cover_M': 0.921, 'cover_D': 0.234, 'false_cross': 0.079, 'correct': 0.751}
+{'truth': 'gap_only', 'n': 8044, 'method': 'pooled', 'bias_M': -0.0005, 'bias_D': 0.0054, 'rmse_M': 0.0011, 'rmse_D': 0.0055, 'cover_M': 0.908, 'cover_D': 0.0, 'false_cross': 0.092, 'correct': 0.658}
+{'truth': 'gap_only', 'n': 8044, 'method': 'univ-RC', 'bias_M': -0.001, 'bias_D': -0.0009, 'rmse_M': 0.0027, 'rmse_D': 0.0033, 'cover_M': 0.909, 'cover_D': 0.917, 'false_cross': 0.091, 'correct': 0.757}
+{'truth': 'gap_only', 'n': 8044, 'method': 'ANCHOR', 'bias_M': -0.0, 'bias_D': -0.0001, 'rmse_M': 0.0019, 'rmse_D': 0.0025, 'cover_M': 0.937, 'cover_D': 0.939, 'false_cross': 0.063, 'correct': 0.876}
+{'truth': 'null', 'n': 2011, 'method': 'oracle', 'bias_M': -0.0, 'bias_D': -0.0, 'rmse_M': 0.0032, 'rmse_D': 0.0037, 'cover_M': 0.952, 'cover_D': 0.947, 'false_cross': nan, 'correct': 0.91}
+{'truth': 'null', 'n': 2011, 'method': 'naive', 'bias_M': 0.0001, 'bias_D': 0.0001, 'rmse_M': 0.0026, 'rmse_D': 0.0029, 'cover_M': 0.947, 'cover_D': 0.943, 'false_cross': nan, 'correct': 0.908}
+{'truth': 'null', 'n': 2011, 'method': 'pooled', 'bias_M': 0.0001, 'bias_D': 0.0, 'rmse_M': 0.0019, 'rmse_D': 0.002, 'cover_M': 0.945, 'cover_D': 0.94, 'false_cross': nan, 'correct': 0.914}
+{'truth': 'null', 'n': 2011, 'method': 'univ-RC', 'bias_M': 0.0001, 'bias_D': 0.0001, 'rmse_M': 0.0049, 'rmse_D': 0.0062, 'cover_M': 0.939, 'cover_D': 0.931, 'false_cross': nan, 'correct': 0.894}
+{'truth': 'null', 'n': 2011, 'method': 'ANCHOR', 'bias_M': 0.0001, 'bias_D': 0.0001, 'rmse_M': 0.0038, 'rmse_D': 0.0049, 'cover_M': 0.936, 'cover_D': 0.934, 'false_cross': nan, 'correct': 0.881}
+{'truth': 'null', 'n': 8044, 'method': 'oracle', 'bias_M': 0.0, 'bias_D': 0.0001, 'rmse_M': 0.0016, 'rmse_D': 0.0018, 'cover_M': 0.946, 'cover_D': 0.955, 'false_cross': nan, 'correct': 0.911}
+{'truth': 'null', 'n': 8044, 'method': 'naive', 'bias_M': 0.0, 'bias_D': 0.0, 'rmse_M': 0.0013, 'rmse_D': 0.0014, 'cover_M': 0.947, 'cover_D': 0.956, 'false_cross': nan, 'correct': 0.916}
+{'truth': 'null', 'n': 8044, 'method': 'pooled', 'bias_M': 0.0, 'bias_D': 0.0, 'rmse_M': 0.001, 'rmse_D': 0.001, 'cover_M': 0.946, 'cover_D': 0.958, 'false_cross': nan, 'correct': 0.922}
+{'truth': 'null', 'n': 8044, 'method': 'univ-RC', 'bias_M': 0.0001, 'bias_D': 0.0001, 'rmse_M': 0.0025, 'rmse_D': 0.003, 'cover_M': 0.932, 'cover_D': 0.953, 'false_cross': nan, 'correct': 0.902}
+{'truth': 'null', 'n': 8044, 'method': 'ANCHOR', 'bias_M': 0.0, 'bias_D': 0.0001, 'rmse_M': 0.0019, 'rmse_D': 0.0023, 'cover_M': 0.936, 'cover_D': 0.945, 'false_cross': nan, 'correct': 0.888}

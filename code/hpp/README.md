@@ -1,6 +1,6 @@
 # HPP analysis scripts
 
-These are the scripts run inside the Human Phenotype Project (HPP) trusted research environment for the ANCHOR paper, kept as they were run. They print aggregate results only. This folder contains no participant-level data and no HPP results.
+These are the scripts run inside the Human Phenotype Project (HPP) trusted research environment for the ANCHOR paper, kept as they were run. They print aggregate results only. This folder contains no participant-level data; the aggregate results these scripts printed are transcribed in [`results/hpp_aggregate_results.txt`](../../results/hpp_aggregate_results.txt).
 
 ## Running them
 

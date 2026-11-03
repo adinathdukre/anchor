@@ -1,0 +1,2 @@
+{'scenario': 'ar1', 'method': 'naive', 'bias_M': -3.292, 'bias_other': 1.534, 'cover_M': 0.262, 'cover_other': 0.786, 'false_other': 0.214}
+{'scenario': 'ar1', 'method': 'ANCHOR', 'bias_M': -1.992, 'bias_other': 1.287, 'cover_M': 0.742, 'cover_other': 0.888, 'false_other': 0.112}

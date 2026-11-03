@@ -1,0 +1,8 @@
+Artwork used by figures/make_overview.py (Figure 1).
+
+Current figure (all public domain, CC0 1.0, via bioicons.com):
+  person_cc0.svg      - "patient" by Marcel Tisch
+  liver_cc0.svg       - "healthy liver" by Jan Clusmann
+  blood_tube_cc0.svg  - "blood sample" by Marcel Tisch
+  dna_cc0.svg         - "DNA double helix" by James Lloyd (background fill removed)
+All other elements (watch, CGM sensor, phone, ultrasound probe, plots) are drawn in the script.

@@ -1,0 +1,46 @@
+code/sim/sim_stress.py:34: RuntimeWarning: divide by zero encountered in matmul
+  k = rng.choice([2, 3], N, p=PK); X = rng.multivariate_normal(np.zeros(p), SX, N)
+code/sim/sim_stress.py:34: RuntimeWarning: overflow encountered in matmul
+  k = rng.choice([2, 3], N, p=PK); X = rng.multivariate_normal(np.zeros(p), SX, N)
+code/sim/sim_stress.py:34: RuntimeWarning: invalid value encountered in matmul
+  k = rng.choice([2, 3], N, p=PK); X = rng.multivariate_normal(np.zeros(p), SX, N)
+code/sim/sim_stress.py:36: RuntimeWarning: divide by zero encountered in matmul
+  U = rng.multivariate_normal(np.zeros(p), SU, m)
+code/sim/sim_stress.py:36: RuntimeWarning: overflow encountered in matmul
+  U = rng.multivariate_normal(np.zeros(p), SU, m)
+code/sim/sim_stress.py:36: RuntimeWarning: invalid value encountered in matmul
+  U = rng.multivariate_normal(np.zeros(p), SU, m)
+code/sim/sim_stress.py:44: RuntimeWarning: divide by zero encountered in matmul
+  c = rng.standard_normal(N); sig = X @ beta + 0.02 * c
+code/sim/sim_stress.py:44: RuntimeWarning: overflow encountered in matmul
+  c = rng.standard_normal(N); sig = X @ beta + 0.02 * c
+code/sim/sim_stress.py:44: RuntimeWarning: invalid value encountered in matmul
+  c = rng.standard_normal(N); sig = X @ beta + 0.02 * c
+code/sim/../anchor/anchor.py:56: RuntimeWarning: divide by zero encountered in matmul
+  r = y - A @ coef
+code/sim/../anchor/anchor.py:56: RuntimeWarning: overflow encountered in matmul
+  r = y - A @ coef
+code/sim/../anchor/anchor.py:56: RuntimeWarning: invalid value encountered in matmul
+  r = y - A @ coef
+code/sim/../anchor/anchor.py:60: RuntimeWarning: divide by zero encountered in matmul
+  return AtA_inv @ (A.T * w) @ A @ AtA_inv
+code/sim/../anchor/anchor.py:60: RuntimeWarning: overflow encountered in matmul
+  return AtA_inv @ (A.T * w) @ A @ AtA_inv
+code/sim/../anchor/anchor.py:60: RuntimeWarning: invalid value encountered in matmul
+  return AtA_inv @ (A.T * w) @ A @ AtA_inv
+code/sim/../anchor/anchor.py:122: RuntimeWarning: divide by zero encountered in matmul
+  out[m] = mu_w + Zc[m] @ G.T
+code/sim/../anchor/anchor.py:122: RuntimeWarning: overflow encountered in matmul
+  out[m] = mu_w + Zc[m] @ G.T
+code/sim/../anchor/anchor.py:122: RuntimeWarning: invalid value encountered in matmul
+  out[m] = mu_w + Zc[m] @ G.T
+{'scenario': 'classical', 'method': 'naive', 'bias_M': -2.752, 'bias_other': 1.493, 'cover_M': 0.44, 'cover_other': 0.814, 'false_other': 0.186}
+{'scenario': 'classical', 'method': 'ANCHOR', 'bias_M': -0.053, 'bias_other': 0.028, 'cover_M': 0.95, 'cover_other': 0.956, 'false_other': 0.044}
+{'scenario': 'heavy_tails', 'method': 'naive', 'bias_M': -2.677, 'bias_other': 1.531, 'cover_M': 0.478, 'cover_other': 0.838, 'false_other': 0.162}
+{'scenario': 'heavy_tails', 'method': 'ANCHOR', 'bias_M': 0.05, 'bias_other': 0.013, 'cover_M': 0.922, 'cover_other': 0.958, 'false_other': 0.042}
+{'scenario': 'heterosc', 'method': 'naive', 'bias_M': -2.701, 'bias_other': 1.511, 'cover_M': 0.472, 'cover_other': 0.818, 'false_other': 0.182}
+{'scenario': 'heterosc', 'method': 'ANCHOR', 'bias_M': 0.044, 'bias_other': 0.028, 'cover_M': 0.948, 'cover_other': 0.942, 'false_other': 0.058}
+{'scenario': 'habit_dep', 'method': 'naive', 'bias_M': -2.492, 'bias_other': 1.927, 'cover_M': 0.628, 'cover_other': 0.778, 'false_other': 0.222}
+{'scenario': 'habit_dep', 'method': 'ANCHOR', 'bias_M': 1.874, 'bias_other': 0.009, 'cover_M': 0.866, 'cover_other': 0.958, 'false_other': 0.042}
+{'scenario': 'three_anchors', 'method': 'naive', 'bias_M': -2.874, 'bias_other': 0.983, 'cover_M': 0.516, 'cover_other': 0.898, 'false_other': 0.14}
+{'scenario': 'three_anchors', 'method': 'ANCHOR', 'bias_M': -0.029, 'bias_other': 0.199, 'cover_M': 0.948, 'cover_other': 0.936, 'false_other': 0.108}

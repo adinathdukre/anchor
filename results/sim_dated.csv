@@ -1,0 +1,10 @@
+scenario,method,reps,bias_M,bias_D,cover_M,cover_D,false_gap,phi_hat
+ar_consec,naive,200.0,-3.428,1.389,0.245,0.8,0.2,
+ar_consec,ANCHOR,200.0,-2.155,1.113,0.725,0.895,0.105,
+ar_consec,ANCHOR-dated,200.0,-0.203,-0.336,0.915,0.94,0.06,0.299
+ar_spread,naive,200.0,-2.96,1.613,0.37,0.78,0.22,
+ar_spread,ANCHOR,200.0,-1.098,1.034,0.91,0.945,0.055,
+ar_spread,ANCHOR-dated,200.0,0.048,0.091,0.95,0.96,0.04,0.501
+iid_spread,naive,200.0,-2.692,1.554,0.445,0.795,0.205,
+iid_spread,ANCHOR,200.0,0.03,0.067,0.96,0.975,0.025,
+iid_spread,ANCHOR-dated,200.0,0.05,0.044,0.95,0.965,0.035,0.013

@@ -1,0 +1,4 @@
+{'n': 2011.0, 'method': 'LCM (ML)', 'reps': 500.0, 'bias_M': -0.0001, 'bias_D': 0.0, 'rmse_M': 0.0038, 'rmse_D': 0.0047, 'cover_M': 0.944, 'cover_D': 0.968, 'false_gap': 0.032, 'corr_MD': 0.998}
+{'n': 2011.0, 'method': 'ANCHOR', 'reps': 500.0, 'bias_M': 0.0, 'bias_D': 0.0001, 'rmse_M': 0.0038, 'rmse_D': 0.0047, 'cover_M': 0.942, 'cover_D': 0.95, 'false_gap': 0.05, 'corr_MD': 0.998}
+{'n': 8044.0, 'method': 'LCM (ML)', 'reps': 500.0, 'bias_M': -0.0, 'bias_D': 0.0, 'rmse_M': 0.0019, 'rmse_D': 0.0024, 'cover_M': 0.942, 'cover_D': 0.96, 'false_gap': 0.04, 'corr_MD': 0.9963}
+{'n': 8044.0, 'method': 'ANCHOR', 'reps': 500.0, 'bias_M': 0.0001, 'bias_D': 0.0001, 'rmse_M': 0.0018, 'rmse_D': 0.0023, 'cover_M': 0.938, 'cover_D': 0.958, 'false_gap': 0.042, 'corr_MD': 0.9963}

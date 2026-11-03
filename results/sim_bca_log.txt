@@ -1,0 +1,4 @@
+{'truth': 'null', 'method': 'percentile', 'reps': 1000, 'cover_M': np.float64(0.948), 'cover_D': np.float64(0.947), 'mcse_M': np.float64(0.007021111023192843), 'mcse_D': np.float64(0.007084560677981384)}
+{'truth': 'null', 'method': 'BCa', 'reps': 1000, 'cover_M': np.float64(0.948), 'cover_D': np.float64(0.956), 'mcse_M': np.float64(0.007021111023192843), 'mcse_D': np.float64(0.006485676526007139)}
+{'truth': 'clock_only', 'method': 'percentile', 'reps': 1000, 'cover_M': np.float64(0.948), 'cover_D': np.float64(0.951), 'mcse_M': np.float64(0.007021111023192843), 'mcse_D': np.float64(0.006826346021115546)}
+{'truth': 'clock_only', 'method': 'BCa', 'reps': 1000, 'cover_M': np.float64(0.942), 'cover_D': np.float64(0.95), 'mcse_M': np.float64(0.007391616873188169), 'mcse_D': np.float64(0.006892024376045114)}

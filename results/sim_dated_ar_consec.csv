@@ -1,0 +1,4 @@
+scenario,method,reps,bias_M,bias_D,cover_M,cover_D,false_gap,phi_hat
+ar_consec,naive,200,-3.428092886385358,1.3888288572521341,0.245,0.8,0.2,nan
+ar_consec,ANCHOR,200,-2.1548829149854964,1.112744609054505,0.725,0.895,0.105,nan
+ar_consec,ANCHOR-dated,200,-0.20349299170771984,-0.33634314535853943,0.915,0.94,0.06,0.299
