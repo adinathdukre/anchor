@@ -226,6 +226,3 @@ For questions or collaboration, please open an [issue](https://github.com/adinat
 ## 📜 License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
-> [!IMPORTANT]
-> ANCHOR is intended for research only. Its estimates are not clinical guidance and must not inform any diagnostic or treatment decision.
